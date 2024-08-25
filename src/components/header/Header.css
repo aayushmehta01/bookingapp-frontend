@@ -44,37 +44,3 @@
     font-size: 15px;
     cursor: pointer;
 }
-
-.headerSearch{
-    height: 30px;
-    background-color: #fff;
-    border: 3px solid #febb02;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px 0;
-    position: absolute;
-    bottom: -25px;
-    width: 100%;
-    max-width: 1100px;
-}
-
-.headerIcon{
-    color: rgb(166, 165, 165);
-}
-
-.headerSearchItem{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.headerSearchInput{
-    border: none;
-    outline: none;
-}
-
-.headerSearchText{
-    color: rgb(166, 165, 165);
-    cursor: pointer;
-}

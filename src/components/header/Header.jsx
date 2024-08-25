@@ -1,8 +1,10 @@
-import React from 'react'
+import {useState} from 'react'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
-import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
+import { faBed, faCar, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css fil
+import SearchBar from '../searchbar/SearchBar.jsx'
 
 const Header = () => {
   return (
@@ -33,25 +35,8 @@ const Header = () => {
             <h1 className='headerTitle'>Booking made easy.</h1>
             <p className="headerDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis fugit consectetur molestiae nobis necessitatibus.</p>
             <button className="headerBtn">Sign In / Register</button>
-            <div className="headerSearch">
-                <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faBed} className='headerIcon'/>
-                    <input type="text"
-                    placeholder='Where are you going?' className='headerSearchInput'
-                    />
-                </div>
-                <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faCalendarDays} className='headerIcon'/>
-                    <span className="headerSearchText">date 2 date</span>
-                </div>
-                <div className="headerSearchItem">
-                    <FontAwesomeIcon icon={faPerson} className='headerIcon'/>
-                    <span className="headerSearchText">2 adults 2 childrens 1 room</span>
-                </div>
-                <div className="headerSearchItem">
-                    <button className="headerBtn">Search</button>
-                </div>
-            </div>
+
+            <SearchBar />
         </div>
     </div>
   )

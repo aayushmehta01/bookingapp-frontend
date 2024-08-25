@@ -1,0 +1,74 @@
+.headerSearch{
+    height: 30px;
+    background-color: #fff;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.headerIcon{
+    color: rgb(166, 165, 165);
+}
+
+.headerSearchItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerSearchInput{
+    border: none;
+    outline: none;
+}
+
+.headerSearchText{
+    color: rgb(166, 165, 165);
+    cursor: pointer;
+}
+
+.headerDateRange{
+    position: absolute;
+    top: 55px;
+}
+
+.optionCounterButton:disabled{
+    cursor: not-allowed;
+}
+
+.options{
+    position: absolute;
+    top: 55px;
+    background-color: #fff;
+    color: rgb(166, 165, 165);
+
+}
+
+.optionItem{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.optionCounter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.optionCounterButton{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #0071c2;
+    color: #0071c2;
+    background-color: #fff;
+    cursor: pointer;
+}

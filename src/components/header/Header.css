@@ -1,0 +1,80 @@
+.header{
+    background-color: #0d3166;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.headerContainer{
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px 0 100px 0;
+}
+
+.headerList{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.headerListItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.headerListItem.active{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.headerDesc{
+    margin: 20px 0;
+}
+
+.headerBtn{
+    background-color: #154997;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.headerSearch{
+    height: 30px;
+    background-color: #fff;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.headerIcon{
+    color: rgb(166, 165, 165);
+}
+
+.headerSearchItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerSearchInput{
+    border: none;
+    outline: none;
+}
+
+.headerSearchText{
+    color: rgb(166, 165, 165);
+    cursor: pointer;
+}

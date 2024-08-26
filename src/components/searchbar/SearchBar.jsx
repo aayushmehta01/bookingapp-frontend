@@ -106,7 +106,7 @@ const SearchBar = () => {
         </div>
 
         <div className="headerSearchItem">
-            <button className="headerBtn">Search</button>
+            <button className="headerSearchBtn">Search</button>
         </div>
     </div>
   )

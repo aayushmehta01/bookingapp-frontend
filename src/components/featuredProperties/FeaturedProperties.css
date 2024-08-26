@@ -1,0 +1,73 @@
+.fp{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.fpItem{
+    flex: 1;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    position: relative;
+    height: 380px;
+    -webkit-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+    box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+}
+
+.fpImg{
+    width: 100%;
+    border-radius:5px 5px 0 0;
+}
+
+.fpItemDetails{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.fpName{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.fpCity{
+    color: #6d6d6d;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.fpRating>button{
+    background-color: #003b95;
+    border: none;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px 5px 5px 0;
+}
+
+.fpRating>span{
+    font-size: 13px;
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+.fpPrice{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 13px;
+    color: #6d6d6d;
+    margin-top: 20px;
+}
+
+.fpPrice>strong{
+    color: black;
+    font-size: 16px;
+}

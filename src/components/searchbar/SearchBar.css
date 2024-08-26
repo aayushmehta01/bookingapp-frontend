@@ -10,6 +10,7 @@
     bottom: -25px;
     width: 100%;
     max-width: 1024px;
+    border-radius: 6px;
 }
 
 .headerIcon{
@@ -72,4 +73,22 @@
     color: #0071c2;
     background-color: #fff;
     cursor: pointer;
+}
+
+.headerSearchBtn{
+    background-color: #154997;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 200ms;
+    margin-right: -39px;
+    width: 129px;
+}
+
+.headerSearchBtn:hover{
+    opacity: 0.8;
 }

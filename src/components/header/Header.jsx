@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBed, faCar, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
+import { faArchway, faBed, faCar, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css fil
 import SearchBar from '../searchbar/SearchBar.jsx'
@@ -14,7 +14,7 @@ const Header = ({type}) => {
         { icon: faBed, label: 'Stays' },
         { icon: faPlane, label: 'Flights' },
         { icon: faCar, label: 'Car Rentals' },
-        { icon: faBed, label: 'Attractions' },
+        { icon: faArchway, label: 'Attractions' },
         { icon: faTaxi, label: 'Airport Taxi' },
     ];
 

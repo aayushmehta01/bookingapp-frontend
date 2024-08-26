@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
 .header{
-    background-color: #0d3166;
+    background-image: url("https://r-xx.bstatic.com/xdata/images/xphoto/2880x868/363658458.jpeg?k=427a5cc2522eb3d80a76d232939725ec6cf76e03ef26ee846375709b3e9caf6f&o=");
+    background-size: cover;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -9,7 +12,7 @@
 .headerContainer{
     width: 100%;
     max-width: 1024px;
-    margin: 20px 0 100px 0;
+    margin: 20px 0 100px 0;     
 }
 
 .headerContainer.listMode{
@@ -27,24 +30,48 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 500ms;
 }
 
-.headerListItem.active{
+.headerListItem:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.active{
     border: 1px solid white;
     padding: 10px;
     border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.headerTitle{
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Signika Negative", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .headerDesc{
-    margin: 20px 0;
+    margin: 10px 0 40px 0;
+    font-size: 25px;
 }
 
 .headerBtn{
     background-color: #154997;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     border: none;
-    padding: 10px 20px;
-    font-size: 15px;
+    border-radius: 4px;
+    padding: 15px 20px;
+    font-size: 16px;
     cursor: pointer;
+    transition: opacity 200ms;
+}
+
+.headerBtn:hover{
+    opacity: 0.8;
 }

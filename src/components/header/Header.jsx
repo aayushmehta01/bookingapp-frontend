@@ -7,10 +7,25 @@ import 'react-date-range/dist/theme/default.css'; // theme css fil
 import SearchBar from '../searchbar/SearchBar.jsx'
 
 const Header = ({type}) => {
+    
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const headerItems = [
+        { icon: faBed, label: 'Stays' },
+        { icon: faPlane, label: 'Flights' },
+        { icon: faCar, label: 'Car Rentals' },
+        { icon: faBed, label: 'Attractions' },
+        { icon: faTaxi, label: 'Airport Taxi' },
+    ];
+
+    const handleItemClick = (index) => {
+        setActiveIndex(index);
+    };
+    
   return (
     <div className="header">
         <div className={type==="list" ? "headerContainer listMode" : "headerContainer"}>
-            <div className="headerList">
+            {/* <div className="headerList">
                 <div className="headerListItem active">
                     <FontAwesomeIcon icon={faBed} />
                     <span>Stays</span>
@@ -31,14 +46,28 @@ const Header = ({type}) => {
                     <FontAwesomeIcon icon={faTaxi} />
                     <span>Airport Taxi</span>
                 </div>
+            </div> */}
+            <div className="headerList">
+                {headerItems.map((item, index) => (
+                    <div
+                        key={index}
+                        className={`headerListItem ${activeIndex === index ? 'active' : ''}`}
+                        onClick={() => handleItemClick(index)}
+                    >
+                        <FontAwesomeIcon icon={item.icon} />
+                        <span>{item.label}</span>
+                    </div>
+                ))}
             </div>
             {type !== "list" &&
             <>
-            <h1 className='headerTitle'>Booking made easy.</h1>
-            <p className="headerDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis fugit consectetur molestiae nobis necessitatibus.</p>
-            <button className="headerBtn">Sign In / Register</button>
-
-            <SearchBar />
+            <div className='headerHero'>
+                <h1 className='headerTitle'>A place to call home</h1>
+                <h1 className="headerTitle">on your next adventure</h1>
+                <p className="headerDesc">Experience the joy of an entire place to yourself     </p>
+                <button className="headerBtn">Book a holiday</button>
+                <SearchBar />
+            </div>
             </>
             }
         </div>

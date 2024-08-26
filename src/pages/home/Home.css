@@ -1,0 +1,31 @@
+.homeContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.homeHeading{
+    width: 100%;
+    max-width: 1024px;
+}
+
+.homeHeading>h1{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.homeHeading>h2{
+    font-size: 16px;
+    color: #626262;
+    font-weight: normal;
+    margin-bottom: -10px;
+}
+
+.homeTitle{
+    width: 1024px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}

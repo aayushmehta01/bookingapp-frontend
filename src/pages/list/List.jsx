@@ -5,7 +5,7 @@ import Header from '../../components/header/Header.jsx'
 const List = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar type="list"/>
       <Header type="list"/>
     </div>
   )

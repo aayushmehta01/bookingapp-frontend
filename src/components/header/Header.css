@@ -11,6 +11,14 @@
     position: relative;
 }
 
+.listHeader{
+    background-color: #0d3166;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
 .headerContainer{
     width: 100%;
     max-width: 1024px;

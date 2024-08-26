@@ -5,6 +5,8 @@ import Header from '../../components/header/Header.jsx'
 import Featured from '../../components/featured/Featured.jsx'
 import PropertyList from '../../components/propertyList/PropertyList.jsx'
 import FeaturedProperties from '../../components/featuredProperties/FeaturedProperties.jsx'
+import MailList from '../../components/mailList/MailList.jsx'
+import Footer from '../../components/footer/Footer.jsx'
 
 const Home = () => {
   return (
@@ -24,8 +26,8 @@ const Home = () => {
           <h2>Save on stays for 30 August - 1 September</h2>
         </div>
         <FeaturedProperties />
-        <h1 className='homeTitle'>Travel more, spend less</h1>
-        
+        <MailList />
+        <Footer />
       </div>
     </div>
   )

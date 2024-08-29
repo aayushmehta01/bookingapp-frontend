@@ -49,6 +49,10 @@
     background-color: #fff;
     color: rgb(166, 165, 165);
     z-index: 3;
+    border-radius: 5px;
+    -webkit-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+    box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
 }
 
 .optionItem{

@@ -4,7 +4,7 @@ import './MailList.css'
 const MailList = () => {
   return (
     <div className="mail">
-        <h1 className="mailTitle">Save Time, Save Money</h1>
+        <h1 className="mailTitle">Travel more, spend less</h1>
         <span className="mailDesc">Save 10% or more at participating properties - just look for the blue Genius label</span>
         <div className="mailInputContainer">
             <input type="text" placeholder='Your Email'/>

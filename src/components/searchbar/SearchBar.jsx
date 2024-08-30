@@ -64,6 +64,7 @@ const SearchBar = ({ prefill = {} }) => {
                 moveRangeOnFirstSelection={false}
                 ranges={date}
                 className='headerDateRange'
+                minDate={new Date()}
             />}
         </div>
         <div className="headerSearchItem">

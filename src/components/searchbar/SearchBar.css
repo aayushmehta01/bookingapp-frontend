@@ -26,6 +26,7 @@
 .headerSearchInput{
     border: none;
     outline: none;
+    font-size: 14px;
 }
 
 .headerSearchText{
@@ -37,6 +38,9 @@
     position: absolute;
     top: 55px;
     z-index: 2;
+    border-radius: 5px;
+    -webkit-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+    box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
 }
 
 .optionCounterButton:disabled{
@@ -51,7 +55,6 @@
     z-index: 3;
     border-radius: 5px;
     -webkit-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
-    -moz-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
     box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
 }
 

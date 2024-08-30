@@ -4,10 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faCalendarDays, faPerson } from '@fortawesome/free-solid-svg-icons'
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 
-const SearchBar = () => {
+const SearchBar = ({ prefill = {} }) => {
     const [openDate, setOpenDate] = useState(false);
-    const [date, setDate] = useState([
+    const [openOptions, setOpenOptions] = useState(false);
+    
+    const [destination, setDestination] = useState(prefill.destination || "");
+    const [date, setDate] = useState(prefill.date || [
         {
           startDate: new Date(),
           endDate: new Date(),
@@ -15,8 +19,7 @@ const SearchBar = () => {
         }
     ]);
 
-    const [openOptions, setOpenOptions] = useState(false);
-    const [options, setOptions] = useState({
+    const [options, setOptions] = useState(prefill.options || {
         adult: 2,
         children: 0,
         room: 1,
@@ -30,19 +33,30 @@ const SearchBar = () => {
             };
         });
     };
-      
+
+    const navigate = useNavigate();
+    
+    const handleSearch = ()=>{
+        navigate("/hotels", {state:{ destination, date, options }})
+    }
 
     return (
     <div className="headerSearch">
         <div className="headerSearchItem">
             <FontAwesomeIcon icon={faBed} className='headerIcon'/>
-            <input type="text"
-            placeholder='Where are you going?' className='headerSearchInput'
+            <input
+            type="text"
+            placeholder='Where are you going?'
+            className='headerSearchInput'
+            value={destination}
+            onChange={e=>setDestination(e.target.value)}
             />
         </div>
         <div className="headerSearchItem" >
             <FontAwesomeIcon icon={faCalendarDays} className='headerIcon'/>
-            <span onClick={()=>setOpenDate(!openDate)} className="headerSearchText">{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
+            <span onClick={()=>setOpenDate(!openDate)} className="headerSearchText">
+                {`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`}
+            </span>
             {openDate &&
             <DateRange
                 editableDateInputs={true}
@@ -54,7 +68,9 @@ const SearchBar = () => {
         </div>
         <div className="headerSearchItem">
             <FontAwesomeIcon icon={faPerson} className='headerIcon'/>
-            <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+            <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">
+                {`${options.adult} adult · ${options.children} children · ${options.room} room`}
+            </span>
             {openOptions &&
             <div className="options">
                 <div className="optionItem">
@@ -106,7 +122,10 @@ const SearchBar = () => {
         </div>
 
         <div className="headerSearchItem">
-            <button className="headerSearchBtn">Search</button>
+            <button
+            className="headerSearchBtn"
+            onClick={handleSearch}
+            >Search</button>
         </div>
     </div>
   )

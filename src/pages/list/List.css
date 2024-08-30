@@ -1,5 +1,5 @@
 .lContainer{
-    margin: 20px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
@@ -15,9 +15,9 @@
     flex: 1;
     background-color: #fff;
     border-radius: 5px;
-    -webkit-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
-    -moz-box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
-    box-shadow: 6px 4px 11px 0px rgba(0,0,0,0.15);
+    border: 1px solid lightgray;
+    position: sticky;
+    top: 20px;
 }
 
 .lResult{
@@ -26,6 +26,8 @@
 }
 
 .lTitle{
-    font-size: 20px;
-    color: rgb(166, 165, 165);;
+    font-size: 18px;
+    color: #000;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
 }

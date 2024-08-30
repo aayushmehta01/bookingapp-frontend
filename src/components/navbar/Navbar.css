@@ -5,13 +5,6 @@
     justify-content: center;
 }
 
-.listNavbar{
-    height: 50px;
-    background-color: #0d3166;
-    display: flex;
-    justify-content: center;
-}
-
 .navContainer{
     width: 100%;
     max-width: 1024px;
@@ -32,6 +25,7 @@
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    color: #0d3166;
+    color: #3489e9;
     font-size: 15px;
+    border-radius: 4px;
 }

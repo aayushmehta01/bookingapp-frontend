@@ -26,7 +26,7 @@ const List = () => {
 
     return (
     <div>
-		<Navbar type="list" />
+		<Navbar />
 		<Header type="list" prefill={{destination, date, options}}/>
 		<div className="lsContainer">
 			<div className="lsWrapper">

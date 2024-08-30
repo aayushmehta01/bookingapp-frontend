@@ -1,6 +1,7 @@
 .mail{
     width: 100%;
     margin-top: 50px;
+    margin-bottom: 50px;
     background-color: #003580;
     color: white;
     display: flex;
@@ -8,6 +9,7 @@
     align-items: center;
     gap: 20px;
     padding: 50px;
+    box-sizing: border-box;
   }
   
   .mailInputContainer>input{

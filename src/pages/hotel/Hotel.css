@@ -1,0 +1,140 @@
+.hotelMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hotelWrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.hotelBook{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0d3166;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hotelImages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hotelImgWrapper{
+    width: 33%;
+}
+
+.hotelImg{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.hotelTitle{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.hotelAddress{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.icon{
+    color: #0d3166;
+    margin-right: 5px;
+}
+
+.hotelDetails{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.hotelDetailsText{
+    flex: 3;
+    margin-top: 20px;
+}
+
+.hotelTitle{
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hotelDesc{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.hotelDetailPrice{
+    flex: 1;
+    background-color: #f0f6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hotelFacility>h2{
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.facilityOp{
+    display: flex;
+    gap: 30px;
+}
+
+.facilityIcon{
+    color: #349b5d;
+}
+
+.facility{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hotelDetailPrice>h1{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.hotelDetailPrice>h2{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.hotelDetailPrice>span{
+    font-size: 13px;
+}
+
+.hotelDetailPrice>button{
+    border: none;
+    background-color: #0d3166;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hotelDetailPrice .price{
+    font-weight: normal;
+}

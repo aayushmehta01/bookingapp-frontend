@@ -45,6 +45,9 @@ const Footer = () => {
           <li className="fListItem">Terms & conditions</li>
         </ul>
       </div>
+      <div className="copyright">
+      Copyright © 2024 Bookeasy.com™. All rights reserved.
+      </div>
     </div>
   )
 }

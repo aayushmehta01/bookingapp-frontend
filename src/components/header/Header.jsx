@@ -6,7 +6,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css fil
 import SearchBar from '../searchbar/SearchBar.jsx'
 
-const Header = ({type, prefill}) => {
+const Header = ({type, prefill, typeHotel}) => {
     
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -70,7 +70,8 @@ const Header = ({type, prefill}) => {
             </div>
             }
 
-            {type === "list" && 
+            {type === "list" &&
+             typeHotel !== "hotel" &&
             <div className="headerHero">
                 <SearchBar prefill={prefill}/>
             </div>

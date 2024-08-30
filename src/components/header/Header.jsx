@@ -59,8 +59,8 @@ const Header = ({type}) => {
                     </div>
                 ))}
             </div>
+
             {type !== "list" &&
-            <>
             <div className='headerHero'>
                 <h1 className='headerTitle'>A place to call home</h1>
                 <h1 className="headerTitle">on your next adventure</h1>
@@ -68,7 +68,12 @@ const Header = ({type}) => {
                 <button className="headerBtn">Book a holiday</button>
                 <SearchBar />
             </div>
-            </>
+            }
+
+            {type === "list" && 
+            <div className="headerHero">
+                <SearchBar />
+            </div>
             }
         </div>
     </div>

@@ -45,6 +45,22 @@
     justify-content: center;
 }
 
+.lsOption>button{
+    background-color: #154997;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    transition: opacity 200ms;
+}
+
+.lsOption>button:hover{
+    opacity: 0.8;
+}
+
 .lsOptionHeading{
     font-size: 14px;
     font-weight: 700;

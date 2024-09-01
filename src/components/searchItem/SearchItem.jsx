@@ -1,7 +1,8 @@
 import React from 'react';
 import './SearchItem.css';
+import { Link } from "react-router-dom";
 
-const SearchItem = () => {
+const SearchItem = ({item}) => {
     return (
         <div className="searchItem">
             <img
@@ -10,9 +11,9 @@ const SearchItem = () => {
                 className="siImg"
             />
             <div className="siDesc">
-                <h1 className="siTitle">Storii By ITC Hotels Moira Riviera</h1>
+                <h1 className="siTitle">{item.name}</h1>
                 <span className="siDistance">
-                    500m from center
+                    {item.distance}m from center
                 </span>
                 <span className="siTaxiOp">
                     Free airport taxi
@@ -21,7 +22,7 @@ const SearchItem = () => {
                     Studio Apartment with Air conditioning
                 </span>
                 <span className="siFeatures">
-                    Entire studio • 1 bathroom • 21m² 1 full bed
+                    {item.desc}
                 </span>
                 <span className="siCancelOp">
                     Free cancellation
@@ -31,14 +32,16 @@ const SearchItem = () => {
                 </span>
             </div>
             <div className="siDetails">
-                <div className="siRating">
+                {item.rating && <div className="siRating">
                     <span>Excellent</span>
-                    <button>8.9</button>
-                </div>
+                    <button>{item.rating}</button>
+                </div>}
                 <div className="siDetailTexts">
-                    <span className="siPrice">₹ 3,990</span>
-                    <span className="siTaxOp">+₹ 9,809 taxes and charges</span>
-                    <button className="siCheckButton">See availability</button>
+                    <span className="siPrice">₹ {item.cheapestPrice}</span>
+                    <span className="siTaxOp">+₹ {item.cheapestPrice*0.3} taxes and charges</span>
+                    <Link to={`/hotels/${item._id}`}>
+                        <button className="siCheckButton">See availability</button>
+                    </Link>
                 </div>
             </div>
         </div>

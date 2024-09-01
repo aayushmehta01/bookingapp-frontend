@@ -23,3 +23,9 @@
     font-weight: 600;
     margin-top: 10px;
 }
+
+.pListTitle>span{
+    font-size: 14px;
+    font-weight: 500;
+    color: #7b7b7b;
+}

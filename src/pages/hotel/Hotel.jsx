@@ -6,8 +6,13 @@ import MailList from '../../components/mailList/MailList';
 import Footer from '../../components/footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBanSmoking, faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot, faMugSaucer, faWifi, faWineGlass } from '@fortawesome/free-solid-svg-icons';
+import useFetch from '../../hooks/useFetch';
+import { useLocation } from 'react-router-dom';
 
 const Hotel = () => {
+    const location = useLocation();
+    const id = location.pathname.split("/")[2];
+    const { data, loading, error } = useFetch(`/api/hotels/find/${id}`);
 
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen] = useState(false);
@@ -54,7 +59,8 @@ const Hotel = () => {
         <div>
             <Navbar />
             <Header type="list" typeHotel="hotel"/>
-            <div className="hotelMain">
+            {loading ? ("loading please wait") : (
+                <div className="hotelMain">
                 {open && (
                 <div className="slider">
                     <FontAwesomeIcon
@@ -79,10 +85,10 @@ const Hotel = () => {
                 )}
                 <div className="hotelWrapper">
                     <button className="hotelBook">Reserve</button>
-                    <h1 className="hotelTitle">Hotel Grace Majestic</h1>
+                    <h1 className="hotelTitle">{data.name}</h1>
                     <div className="hotelAddress">
                         <FontAwesomeIcon icon={faLocationDot} className='icon'/>
-                        <span>Near KTC Margao Goa Beside South Goa Collectorate Ambaji Fatorda Goa India, 403602 Madgaon, India</span>
+                        <span>{data.address}</span>
                     </div>
                     <div className="hotelImages">
                         {images.map((photo, index)=>(
@@ -97,12 +103,9 @@ const Hotel = () => {
                     </div>
                     <div className="hotelDetails">
                         <div className="hotelDetailsText">
-                            <h1 className="hotelTitle">Unwind at Our Seaside Escape</h1>
+                            <h1 className="hotelTitle">{data.title}</h1>
                             <p className="hotelDesc">
-                            Located in Madgaon, 4.4 km from Margao Railway Station, Hotel Grace Majestic features a bar and views of the city. Featuring a restaurant, the 3-star hotel has air-conditioned rooms with free WiFi, each with a shared bathroom. The accommodation provides room service, a 24-hour front desk and currency exchange for guests.
-                            Guest rooms at the hotel are equipped with a flat-screen TV and a safety deposit box. At Hotel Grace Majestic each room has bed linen and towels.
-                            Basilica Of Bom Jesus is 29 km from the accommodation, while Church of Saint Cajetan is 30 km away. The nearest airport is Dabolim, 22 km from Hotel Grace Majestic, and the property offers a paid airport shuttle service.
-                            Couples particularly like the location — they rated it 8.1 for a two-person trip.
+                            Located in Madgaon,  {data.distance}m from Margao Railway Station. {data.desc}.
                             </p>
                             <div className="hotelFacility">
                                 <h2>Most popular facilities</h2>
@@ -129,15 +132,15 @@ const Hotel = () => {
                         <div className="hotelDetailPrice">
                             <h1>Property highlights</h1>
                             <h2>Perfect for a 3-night stay!</h2>
-                            <span> Top location: Highly rated by recent guests (8.0) </span>
-                            <h2 className='price'><b>₹ 6,750</b> (3 nights)</h2>
+                            <span> Top location: Highly rated by recent guests ({data.rating || '8.2'}) </span>
+                            <h2 className='price'><b>₹ {data.cheapestPrice}</b> (3 nights)</h2>
                             <button>Reserve</button>
                         </div>
                     </div>
                 </div>
             <MailList />
             <Footer />
-            </div>
+            </div>)}
         </div>
     )
 }

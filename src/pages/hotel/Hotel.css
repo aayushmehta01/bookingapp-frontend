@@ -88,6 +88,7 @@
     justify-content: space-between;
     padding: 20px;
     border-radius: 5px;
+    height: 200px;
 }
 
 .hotelFacility>h2{

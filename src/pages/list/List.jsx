@@ -32,8 +32,7 @@ const List = () => {
         reFetch();
     }
 
-    const { data, loading, error, reFetch } = useFetch(`/api/hotels?city=${destination}&min=${min || 1}&max=${max || 999}`);
-    console.log(data);
+    const { data, loading, error, reFetch } = useFetch(`/api/hotels?city=${destination}&min=${min || 1}&max=${max || 999999}`);
 
     return (
     <div>

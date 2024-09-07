@@ -1,10 +1,11 @@
-import {Children, useState} from 'react'
+import {Children, useContext, useState} from 'react'
 import './SearchBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faCalendarDays, faPerson } from '@fortawesome/free-solid-svg-icons'
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
+import { SearchContext } from '../../context/searchContext';
 
 const SearchBar = ({ prefill = {} }) => {
     const [openDate, setOpenDate] = useState(false);
@@ -35,8 +36,11 @@ const SearchBar = ({ prefill = {} }) => {
     };
 
     const navigate = useNavigate();
+
+    const { dispatch } = useContext(SearchContext);
     
     const handleSearch = ()=>{
+        dispatch({type:"NEW_SEARCH", payload:{destination, date, options}})
         navigate("/hotels", {state:{ destination, date, options }})
     }
 

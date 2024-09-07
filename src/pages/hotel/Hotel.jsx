@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Hotel.css';
 import Navbar from '../../components/navbar/Navbar';
 import Header from '../../components/header/Header';
@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBanSmoking, faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot, faMugSaucer, faWifi, faWineGlass } from '@fortawesome/free-solid-svg-icons';
 import useFetch from '../../hooks/useFetch';
 import { useLocation } from 'react-router-dom';
+import { SearchContext } from '../../context/searchContext';
 
 const Hotel = () => {
     const location = useLocation();
@@ -17,6 +18,17 @@ const Hotel = () => {
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen] = useState(false);
 
+    const { date, options} = useContext(SearchContext);
+
+    const MILLISECOND_PER_DAY = 1000*60*60*24;
+    function dayDifference(date1, date2){
+        const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        const daysDiff = Math.ceil(timeDiff / MILLISECOND_PER_DAY);
+        return daysDiff;
+    }
+    
+    const days = dayDifference(date[0].endDate, date[0].startDate);
+    
     const images = [
         {
             src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/162421571.jpg?k=848f7adb33e705d0a19e2c7818ec9a3c1f9e161d6a282cf12805289a48869cec&o=&hp=1"
@@ -131,9 +143,9 @@ const Hotel = () => {
                         </div>
                         <div className="hotelDetailPrice">
                             <h1>Property highlights</h1>
-                            <h2>Perfect for a 3-night stay!</h2>
+                            <h2>Perfect for a {days}-night stay!</h2>
                             <span> Top location: Highly rated by recent guests ({data.rating || '8.2'}) </span>
-                            <h2 className='price'><b>₹ {data.cheapestPrice}</b> (3 nights)</h2>
+                            <h2 className='price'><b>₹ {days * data.cheapestPrice * options.room}</b> ({days} nights)</h2>
                             <button>Reserve</button>
                         </div>
                     </div>

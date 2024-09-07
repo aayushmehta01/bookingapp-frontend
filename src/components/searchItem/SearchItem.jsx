@@ -13,7 +13,7 @@ const SearchItem = ({item}) => {
             <div className="siDesc">
                 <h1 className="siTitle">{item.name}</h1>
                 <span className="siDistance">
-                    {item.distance} km from airport, <span>{item.city}</span>
+                    {item.distance} km from center, <span>{item.city}</span>
                 </span>
                 <span className="siTaxiOp">
                     Free airport taxi

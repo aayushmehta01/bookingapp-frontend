@@ -23,7 +23,7 @@ const FeaturedProperties = () => {
                             <button>{item.rating}</button>
                             <span>Good</span>
                         </div>}
-                        <span className="fpPrice">2 nights <strong>₹{item.cheapestPrice}</strong></span>
+                        <span className="fpPrice">2 nights <strong>₹{item.cheapestPrice*2}</strong></span>
                     </div>
                 </div>
                 ))}

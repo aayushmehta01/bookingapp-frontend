@@ -9,7 +9,7 @@ const FeaturedProperties = () => {
     <div className="fp">
         {loading ? ("loading please wait") : (
             <>
-            {data.map((item)=>(
+            {data.slice(0,4).map((item)=>(
                 <div className="fpItem" key={item._id}>
                     <img
                     src="https://cf.bstatic.com/xdata/images/hotel/square600/556288034.jpg?k=3f014dd27df4ffa8285431bd46620bc286812717ceb16281515a09b31c113849&o="

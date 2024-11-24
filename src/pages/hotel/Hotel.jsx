@@ -7,18 +7,23 @@ import Footer from '../../components/footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBanSmoking, faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot, faMugSaucer, faWifi, faWineGlass } from '@fortawesome/free-solid-svg-icons';
 import useFetch from '../../hooks/useFetch';
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/searchContext';
+import { AuthContext } from '../../context/AuthContext';
+import Reserve from '../../components/reserve/reserve';
 
 const Hotel = () => {
     const location = useLocation();
     const id = location.pathname.split("/")[2];
     const { data, loading, error } = useFetch(`/api/hotels/find/${id}`);
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
 
-    const { date, options} = useContext(SearchContext);
+    const { dates, options} = useContext(SearchContext);
 
     const MILLISECOND_PER_DAY = 1000*60*60*24;
     function dayDifference(date1, date2){
@@ -27,7 +32,7 @@ const Hotel = () => {
         return daysDiff;
     }
     
-    const days = dayDifference(date[0].endDate, date[0].startDate);
+    const days = dayDifference(dates[0].endDate, dates[0].startDate);
     
     const images = [
         {
@@ -67,6 +72,14 @@ const Hotel = () => {
         setSlideNumber(newSlideNumber);
     };
 
+    const handleClick = () => {
+        if(user){
+            setOpenModal(true);
+        }else{
+            navigate("/login");
+        }
+    }
+
     return (
         <div>
             <Navbar />
@@ -96,7 +109,7 @@ const Hotel = () => {
                 </div>
                 )}
                 <div className="hotelWrapper">
-                    <button className="hotelBook">Reserve</button>
+                    <button className="hotelBook" onClick={handleClick}>Reserve</button>
                     <h1 className="hotelTitle">{data.name}</h1>
                     <div className="hotelAddress">
                         <FontAwesomeIcon icon={faLocationDot} className='icon'/>
@@ -146,13 +159,14 @@ const Hotel = () => {
                             <h2>Perfect for a {days}-night stay!</h2>
                             <span> Top location: Highly rated by recent guests ({data.rating || '8.2'}) </span>
                             <h2 className='price'><b>₹ {days * data.cheapestPrice * options.room}</b> ({days} nights)</h2>
-                            <button>Reserve</button>
+                            <button onClick={handleClick}>Reserve</button>
                         </div>
                     </div>
                 </div>
             <MailList />
             <Footer />
             </div>)}
+            {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
         </div>
     )
 }

@@ -33,7 +33,7 @@ export const SearchContextProvider = ({children}) => {
         <SearchContext.Provider
         value={{
             city:state.city,
-            date:state.date,
+            dates:state.date,
             options:state.options,
             dispatch
             }}>

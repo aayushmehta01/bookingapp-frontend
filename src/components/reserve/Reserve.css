@@ -1,0 +1,148 @@
+.reserve {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.rContainer {
+    background-color: #ffffff;
+    padding: 30px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.rClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.rClose:hover {
+    transform: rotate(90deg);
+    color: #0d3166;
+}
+
+.rItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.rItem:last-child {
+    border-bottom: none;
+}
+
+.rInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.rTitle {
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.rDesc {
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.rMax {
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.rPrice {
+    font-weight: 600;
+    font-size: 16px;
+    color: #0d3166;
+    margin-top: 5px;
+}
+
+.rSelectRooms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+.room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.room label {
+    font-size: 14px;
+    color: #444;
+}
+
+.rButton {
+    border: none;
+    padding: 12px 20px;
+    background-color: #0d3166;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.rButton:hover {
+    background-color: #094280;
+    transform: translateY(-2px);
+}
+
+.rButton:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .rItem {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .rContainer {
+        padding: 20px;
+    }
+
+    .rTitle {
+        font-size: 16px;
+    }
+
+    .rButton {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

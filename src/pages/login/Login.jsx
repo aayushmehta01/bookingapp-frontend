@@ -43,6 +43,10 @@ const Login = () => {
         </div>
         <div className="login">
             <div className="lContainer">
+                <div className="lHeader">
+                    <h2>Sign in</h2>
+                    <p>You can sign in using your Bookeasy.com account to access our services.</p>
+                </div>
                 <input
                 type="text"
                 placeholder="username"
@@ -61,6 +65,9 @@ const Login = () => {
                 Login
                 </button>
                 {error && <span>{error.message}</span>}
+                <div className="lFooter">
+                    <p>Don't have an account? <span><Link to="/register" className="link">Sign up</Link></span></p>
+                </div>
             </div>
         </div>
         </>

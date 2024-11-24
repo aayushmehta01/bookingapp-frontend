@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [credentials, setCredentials] = useState({
@@ -30,8 +31,20 @@ const Register = () => {
     };
 
     return (
+        <>
+        <div className="navbar" style={{backgroundColor:'white'}}>
+            <div className="navContainer">
+                <Link to="/" style={{color:'black', textDecoration:'none'}}>
+                <span className="logo">bookeasy</span>
+                </Link>
+            </div>
+        </div>
         <div className="register">
             <div className="rContainer">
+                <div className="rHeader">
+                    <h2>Create an Account</h2>
+                    <p>Sign up to start using our services</p>
+                </div>
                 <input
                     type="text"
                     placeholder="Username"
@@ -57,8 +70,12 @@ const Register = () => {
                     Register
                 </button>
                 {error && <span className="rError">{error.message}</span>}
+                <div className="lFooter">
+                    <p>Already have an account? <span><Link to="/login" className="link">Sign in</Link></span></p>
+                </div>
             </div>
         </div>
+        </>
     );
 };
 

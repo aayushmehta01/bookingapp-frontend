@@ -1,0 +1,110 @@
+.register {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.rContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid lightgray;
+    box-shadow: none;
+}
+
+.rHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rHeader h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.rHeader p {
+    font-size: 14px;
+    color: #777;
+    margin-top: 0;
+}
+
+.lFooter p {
+    font-size: 14px;
+    color: #000;
+    margin-top: 20px;
+}
+
+.lFooter p span{
+    font-size: 14px;
+    color: #69a8ef;
+    transition: text-decoration 0.2s ease;
+}
+
+.link{
+    text-decoration: none;
+    transition: all 0.2 ease;
+}
+
+.link:hover{
+    color: #d32f2f;
+    text-decoration: underline;
+}
+
+.rInput {
+    height: 20px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rInput:focus {
+    border-color: #0071c2;
+    box-shadow: 0 0 4px rgba(0, 113, 194, 0.5);
+    outline: none;
+}
+
+.rButton {
+    border: none;
+    padding: 12px 20px;
+    background: linear-gradient(to right, #0071c2, #005fa3);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rButton:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(to right, #005fa3, #004080);
+    box-shadow: 0 4px 10px rgba(0, 113, 194, 0.4);
+}
+
+.rButton:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.rButton:disabled {
+    background-color: #b3d4f2;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.rError {
+    font-size: 14px;
+    color: #d32f2f;
+    text-align: center;
+}

@@ -3,30 +3,107 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .lContainer {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid lightgray;
 }
 
-.lInput{
-    height: 30px;
-    padding: 10px;
+.lHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lHeader h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.lHeader p {
+    font-size: 14px;
+    color: #777;
+    margin-top: 0;
+}
+
+.lFooter p {
+    font-size: 14px;
+    color: #000;
+    margin-top: 20px;
+}
+
+.lFooter p span{
+    font-size: 14px;
+    color: #69a8ef;
+    transition: text-decoration 0.2s ease;
+}
+
+.link{
+    text-decoration: none;
+    color: #69a8ef;
+    transition: all 0.2 ease;
+}
+
+.link:hover{
+    color: #d32f2f;
+    text-decoration: underline;
+}
+
+.lInput {
+    height: 20px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lInput:focus {
+    border-color: #0071c2;
+    box-shadow: 0 0 4px rgba(0, 113, 194, 0.5);
+    outline: none;
 }
 
 .lButton {
     border: none;
-    padding: 10px 20px;
-    background-color: #0071c2;
+    padding: 12px 20px;
+    background: linear-gradient(to right, #0071c2, #005fa3);
     color: white;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.lButton:disabled{
-    background-color: #0071c28c;
+.lButton:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(to right, #005fa3, #004080);
+    box-shadow: 0 4px 10px rgba(0, 113, 194, 0.4);
+}
+
+.lButton:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.lButton:disabled {
+    background-color: #b3d4f2;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+span {
+    font-size: 14px;
+    text-align: center;
 }

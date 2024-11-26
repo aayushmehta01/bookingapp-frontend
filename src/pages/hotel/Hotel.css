@@ -126,6 +126,7 @@
 
 .hotelDetailPrice>span{
     font-size: 13px;
+    text-align: start;
 }
 
 .hotelDetailPrice>button{

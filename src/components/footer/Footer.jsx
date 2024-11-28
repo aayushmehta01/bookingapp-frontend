@@ -47,6 +47,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
       Copyright © 2024 Bookeasy.com™. All rights reserved.
+       Made by Aayush Mehta with help of collegues Aakash Gosain, Shubham, Abhay Singh, Sunny Kumar.
       </div>
     </div>
   )

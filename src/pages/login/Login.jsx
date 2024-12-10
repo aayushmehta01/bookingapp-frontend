@@ -61,6 +61,7 @@ const Login = () => {
                 onChange={handleChange}
                 className="lInput"
                 />
+                <p className="forgot-pass"><Link to="/forgot-password" className="link">Forgot Password?</Link></p>
                 <button disabled={loading} onClick={handleClick} className="lButton">
                 Login
                 </button>
